@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat-kids - Aprende Jugando</title>
+    <!-- Tailwind CSS (Framework) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Fredoka -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-amber-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white border-b-4 border-amber-300 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <button onclick="navigateTo('home')" class="flex items-center gap-3 group focus:outline-none">
+                <div class="bg-amber-400 p-2.5 rounded-2xl group-hover:rotate-12 transition-transform duration-300">
+                    <i class="fa-solid fa-cat text-2xl text-slate-900"></i>
+                </div>
+                <span class="text-3xl font-bold tracking-wide text-amber-600">cat-kids</span>
+            </button>
+            <nav class="flex gap-2 sm:gap-4">
+                <button onclick="navigateTo('home')" class="px-4 py-2 rounded-xl font-bold bg-amber-100 hover:bg-amber-200 text-amber-800 transition">
+                    <i class="fa-solid fa-house mr-1.5"></i> Inicio
+                </button>
+                <button onclick="navigateTo('modules')" class="px-4 py-2 rounded-xl font-bold bg-amber-500 hover:bg-amber-600 text-white transition">
+                    <i class="fa-solid fa-shapes mr-1.5"></i> Cursos
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
+
+        <!-- VISTA: INICIO / HOME -->
+        <section id="view-home" class="page-view flex flex-col items-center text-center py-12">
+            <div class="bg-amber-100 text-amber-800 px-5 py-2 rounded-full font-bold text-sm mb-6 border-2 border-amber-300">
+                🐾 ¡La mejor academia para pequeños exploradores!
+            </div>
+            
+            <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-800 mb-6 leading-tight max-w-3xl">
+                ¡Bienvenido a <span class="text-amber-500">cat-kids</span>! 🐱
+            </h1>
+            
+            <p class="text-xl text-slate-600 mb-8 max-w-2xl font-medium">
+                Un espacio divertido diseñado especialmente para que los niños pequeños aprendan habilidades cotidianas, matemáticas y ciberseguridad.
+            </p>
+
+            <button onclick="navigateTo('modules')" class="bg-amber-500 hover:bg-amber-600 text-white font-extrabold text-2xl px-10 py-5 rounded-3xl shadow-lg border-b-4 border-amber-700 active:translate-y-1 transition-all flex items-center gap-3">
+                <span>¡Aprende ahora!</span>
+                <i class="fa-solid fa-rocket"></i>
+            </button>
+
+            <!-- Previsualización de temas -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 w-full max-w-4xl">
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 text-center">
+                    <i class="fa-solid fa-shoe-prints text-3xl text-amber-500 mb-2"></i>
+                    <p class="font-bold text-slate-700">Lazos y Zapatos</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 text-center">
+                    <i class="fa-solid fa-plus-minus text-3xl text-sky-500 mb-2"></i>
+                    <p class="font-bold text-slate-700">Aprender a Sumar</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 text-center">
+                    <i class="fa-solid fa-divide text-3xl text-emerald-500 mb-2"></i>
+                    <p class="font-bold text-slate-700">Aprender a Dividir</p>
+                </div>
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 text-center">
+                    <i class="fa-solid fa-shield-halved text-3xl text-indigo-500 mb-2"></i>
+                    <p class="font-bold text-slate-700">Seguridad en Internet</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISTA: SELECCIÓN DE MÓDULOS -->
+        <section id="view-modules" class="page-view hidden">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-extrabold text-slate-800 mb-2">¿Qué quieres aprender hoy? 🐱</h2>
+                <p class="text-slate-600 font-medium">Elige uno de los siguientes temas para comenzar tu lección</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Tarjeta 1: Zapatos -->
+                <button onclick="navigateTo('shoes')" class="card-btn bg-white p-6 rounded-3xl border-4 border-amber-300 hover:border-amber-400 text-left transition flex items-center gap-5 shadow-sm hover:shadow-md">
+                    <div class="bg-amber-100 p-5 rounded-2xl shrink-0">
+                        <i class="fa-solid fa-shoe-prints text-4xl text-amber-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-1">Amarrarse los Zapatos</h3>
+                        <p class="text-slate-500 text-sm">Aprende la técnica de orejitas de conejo paso a paso.</p>
+                    </div>
+                </button>
+
+                <!-- Tarjeta 2: Sumar -->
+                <button onclick="navigateTo('sum')" class="card-btn bg-white p-6 rounded-3xl border-4 border-sky-300 hover:border-sky-400 text-left transition flex items-center gap-5 shadow-sm hover:shadow-md">
+                    <div class="bg-sky-100 p-5 rounded-2xl shrink-0">
+                        <i class="fa-solid fa-plus text-4xl text-sky-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-1">Aprender a Sumar</h3>
+                        <p class="text-slate-500 text-sm">Descubre cómo juntar números de forma fácil y divertida.</p>
+                    </div>
+                </button>
+
+                <!-- Tarjeta 3: Dividir -->
+                <button onclick="navigateTo('divide')" class="card-btn bg-white p-6 rounded-3xl border-4 border-emerald-300 hover:border-emerald-400 text-left transition flex items-center gap-5 shadow-sm hover:shadow-md">
+                    <div class="bg-emerald-100 p-5 rounded-2xl shrink-0">
+                        <i class="fa-solid fa-divide text-4xl text-emerald-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-1">Aprender a Dividir</h3>
+                        <p class="text-slate-500 text-sm">Aprende a repartir en partes iguales jugando.</p>
+                    </div>
+                </button>
+
+                <!-- Tarjeta 4: Internet -->
+                <button onclick="navigateTo('internet')" class="card-btn bg-white p-6 rounded-3xl border-4 border-indigo-300 hover:border-indigo-400 text-left transition flex items-center gap-5 shadow-sm hover:shadow-md">
+                    <div class="bg-indigo-100 p-5 rounded-2xl shrink-0">
+                        <i class="fa-solid fa-shield-halved text-4xl text-indigo-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-1">Protegerse del Internet</h3>
+                        <p class="text-slate-500 text-sm">Consejos para navegar seguro en el mundo digital.</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- VISTA: LECCIÓN AMARRARSE LOS ZAPATOS -->
+        <section id="view-shoes" class="page-view hidden">
+            <button onclick="navigateTo('modules')" class="mb-6 px-4 py-2 bg-amber-200 hover:bg-amber-300 text-amber-900 rounded-xl font-bold text-sm transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Volver a los Cursos
+            </button>
+            
+            <div class="bg-white p-6 rounded-3xl border-2 border-amber-200 mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-shoe-prints text-amber-500"></i> Amarrarse los Zapatos
+                </h2>
+                <!-- Video YouTube incorporado -->
+                <div class="aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md">
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/Ma05YV2XLc8" title="Cómo amarrarse los zapatos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Paso a Paso -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-amber-200">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Pasos para la técnica de Orejas de Conejo 🐰</h3>
+                <ol class="space-y-3 text-slate-700 font-medium">
+                    <li class="p-3 bg-amber-50 rounded-xl"><strong>Paso 1:</strong> Cruza los dos cordones formando una equis (X).</li>
+                    <li class="p-3 bg-amber-50 rounded-xl"><strong>Paso 2:</strong> Pasa un cordón por debajo de la X y jala fuerte para hacer el nudo base.</li>
+                    <li class="p-3 bg-amber-50 rounded-xl"><strong>Paso 3:</strong> Forma dos "orejitas de conejo" dobladitas con cada cordón.</li>
+                    <li class="p-3 bg-amber-50 rounded-xl"><strong>Paso 4:</strong> Cruza las dos orejitas, mete una por el agujerito y jala ambas suavemente. ¡Listo!</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- VISTA: LECCIÓN APRENDER A SUMAR -->
+        <section id="view-sum" class="page-view hidden">
+            <button onclick="navigateTo('modules')" class="mb-6 px-4 py-2 bg-sky-200 hover:bg-sky-300 text-sky-900 rounded-xl font-bold text-sm transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Volver a los Cursos
+            </button>
+            
+            <div class="bg-white p-6 rounded-3xl border-2 border-sky-200 mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-plus text-sky-500"></i> Aprender a Sumar
+                </h2>
+                <!-- Video YouTube incorporado -->
+                <div class="aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md">
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/oexd_Dfic_Q" title="Aprender a Sumar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Mini Ejercicio interactivo -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-sky-200 text-center">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">¿Puedes resolver esta suma? 🍎</h3>
+                <div class="text-3xl font-extrabold text-sky-600 mb-6 bg-sky-50 py-4 rounded-2xl">
+                    3 + 2 = ?
+                </div>
+                <div class="flex justify-center gap-4">
+                    <button onclick="checkAnswer(this, false)" class="px-6 py-3 bg-sky-100 hover:bg-sky-200 text-sky-800 font-bold text-xl rounded-xl">4</button>
+                    <button onclick="checkAnswer(this, true)" class="px-6 py-3 bg-sky-100 hover:bg-sky-200 text-sky-800 font-bold text-xl rounded-xl">5</button>
+                    <button onclick="checkAnswer(this, false)" class="px-6 py-3 bg-sky-100 hover:bg-sky-200 text-sky-800 font-bold text-xl rounded-xl">6</button>
+                </div>
+                <div id="sum-feedback" class="mt-4 font-bold h-6"></div>
+            </div>
+        </section>
+
+        <!-- VISTA: LECCIÓN APRENDER A DIVIDIR -->
+        <section id="view-divide" class="page-view hidden">
+            <button onclick="navigateTo('modules')" class="mb-6 px-4 py-2 bg-emerald-200 hover:bg-emerald-300 text-emerald-900 rounded-xl font-bold text-sm transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Volver a los Cursos
+            </button>
+            
+            <div class="bg-white p-6 rounded-3xl border-2 border-emerald-200 mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-divide text-emerald-500"></i> Aprender a Dividir
+                </h2>
+                <!-- Video YouTube incorporado -->
+                <div class="aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md">
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/iA0fP4tL67s" title="Aprender a Dividir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Concepto clave -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-emerald-200">
+                <h3 class="text-xl font-bold text-slate-800 mb-3">¿Qué significa dividir? 🧩</h3>
+                <p class="text-slate-700 font-medium leading-relaxed">
+                    Dividir es simplemente repartir una cantidad de cosas en grupos iguales para que a todos les toque la misma cantidad. ¡Es la forma más justa de compartir con tus amigos o con tus gatitos!
+                </p>
+            </div>
+        </section>
+
+        <!-- VISTA: LECCIÓN SEGURIDAD EN INTERNET -->
+        <section id="view-internet" class="page-view hidden">
+            <button onclick="navigateTo('modules')" class="mb-6 px-4 py-2 bg-indigo-200 hover:bg-indigo-300 text-indigo-900 rounded-xl font-bold text-sm transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Volver a los Cursos
+            </button>
+            
+            <div class="bg-white p-6 rounded-3xl border-2 border-indigo-200 mb-8">
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-shield-halved text-indigo-500"></i> Protegerse del Internet
+                </h2>
+                <!-- Video YouTube incorporado -->
+                <div class="aspect-video w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-md">
+                    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/rHDTJQKW2y8" title="Protegerse del Internet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Consejos de seguridad -->
+            <div class="bg-white p-6 rounded-3xl border-2 border-indigo-200">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">3 Reglas de Oro en Internet 🛡️</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 bg-indigo-50 rounded-2xl text-center">
+                        <i class="fa-solid fa-user-secret text-3xl text-indigo-600 mb-2"></i>
+                        <h4 class="font-bold text-slate-800 mb-1">Datos Secretos</h4>
+                        <p class="text-xs text-slate-600">Nunca des tu nombre completo, dirección ni escuela a desconocidos.</p>
+                    </div>
+                    <div class="p-4 bg-indigo-50 rounded-2xl text-center">
+                        <i class="fa-solid fa-people-roof text-3xl text-indigo-600 mb-2"></i>
+                        <h4 class="font-bold text-slate-800 mb-1">Avisa a tus Padres</h4>
+                        <p class="text-xs text-slate-600">Si algo te asusta o te hace sentir incómodo, avísale a un adulto.</p>
+                    </div>
+                    <div class="p-4 bg-indigo-50 rounded-2xl text-center">
+                        <i class="fa-solid fa-clock text-3xl text-indigo-600 mb-2"></i>
+                        <h4 class="font-bold text-slate-800 mb-1">Tiempo de Pantalla</h4>
+                        <p class="text-xs text-slate-600">Juega y aprende en internet, pero no olvides salir a jugar al aire libre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-2 border-amber-200 py-6 text-center text-slate-500 font-medium text-sm mt-auto">
+        <p>© cat-kids · Plataforma Educativa Infantil 🐾</p>
+    </footer>
+
+    <!-- Script de Navegación -->
+    <script>
+        function navigateTo(targetViewId) {
+            // Ocultar todas las vistas
+            const views = document.querySelectorAll('.page-view');
+            views.forEach(view => view.classList.add('hidden'));
+
+            // Mostrar la vista seleccionada
+            const selectedView = document.getElementById('view-' + targetViewId);
+            if (selectedView) {
+                selectedView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function checkAnswer(btn, isCorrect) {
+            const feedback = document.getElementById('sum-feedback');
+            if (isCorrect) {
+                feedback.textContent = '¡Correcto! ¡Muy bien hecho! 🎉';
+                feedback.className = 'mt-4 font-bold h-6 text-emerald-600';
+            } else {
+                feedback.textContent = 'Inténtalo otra vez, ¡tú puedes! 💪';
+                feedback.className = 'mt-4 font-bold h-6 text-rose-500';
+            }
+        }
+    </script>
+</body>
+</html>
