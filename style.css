@@ -1,0 +1,36 @@
+/* Custom Styles para cat-kids */
+
+body {
+    font-family: 'Fredoka', cursive, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Animaciones suave para transiciones de pantalla */
+.page-view {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto suave para las tarjetas de cursos */
+.card-btn {
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+}
+
+.card-btn:active {
+    transform: translateY(0);
+}
